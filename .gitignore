@@ -1,0 +1,11 @@
+.venv/
+.cache/
+tools/
+models/
+runtime/
+__pycache__/
+*.pyc
+.env
+*.wav
+*.mp3
+*.log

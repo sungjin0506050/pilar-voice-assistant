@@ -1,0 +1,18 @@
+---
+description: Personal voice assistant on D: — keep work here, not in the staff portal
+alwaysApply: true
+---
+
+# Voice assistant
+
+This repo is **Pilar** (필라르), the user's personal Korean voice assistant. The name is Spanish for pillar. Call it `필라르` only — never `Hey Pilar` or `헤이 비서`.
+
+It is **not** the hospital staff portal (`tjkimeye-staff`).
+
+- Keep all files, caches, models, and venv under `D:\Projects\voice-assistant` (C: is full).
+- The user wants minimum clicks. Do the work; report results.
+- Do not deploy this project to Vercel.
+- Do not edit `tjkimeye-staff` from this project.
+- Voice flow: mic → wav → whisper.cpp → Korean text → `src/brain.py` → edge-tts.
+- Cursor SDK / live coding-by-voice is the next stage. Queue those requests in `runtime/cursor-queue.txt` until that ships.
+- Prefer verifying with `scripts/verify.py` (TTS→STT roundtrip) instead of asking the user to speak.
