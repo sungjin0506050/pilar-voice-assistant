@@ -14,5 +14,8 @@ It is **not** the hospital staff portal (`tjkimeye-staff`).
 - Do not deploy this project to Vercel.
 - Do not edit `tjkimeye-staff` from this project.
 - Voice flow: mic → wav → whisper.cpp → Korean text → `src/brain.py` → edge-tts.
-- Cursor SDK / live coding-by-voice is the next stage. Queue those requests in `runtime/cursor-queue.txt` until that ships.
+- Always-on mode is `python -m src.main --watch`. It only answers when the utterance contains 필라르 / Pilar.
+- Dangerous intents (delete, deploy, shutdown) must ask for `해도 돼` before doing anything. Do not actually delete files yet.
+- Coding utterances go through `src/cursor_bridge.py` → Cursor SDK `Agent.prompt` (local, model composer-2.5) when `CURSOR_API_KEY` is set in `.env`. Otherwise queue to `runtime/cursor-queue.txt`.
+- Default coding workspace is `D:\Projects\tjkimeye-staff` (`PILAR_WORKSPACE`). Never put the API key in git.
 - Prefer verifying with `scripts/verify.py` (TTS→STT roundtrip) instead of asking the user to speak.
